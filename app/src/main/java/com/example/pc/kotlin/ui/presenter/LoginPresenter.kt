@@ -5,25 +5,15 @@ import com.example.pc.kotlin.ui.contract.LoginContract
 
 class LoginPresenter(private val loginActivity: LoginActivity) : LoginContract.Presenter {
     override fun clean() {
-//        loginActivity.
+        loginActivity.doClean()
     }
 
     override fun doLogin(username: String, password: String) {
+        if ("wangjitao" == username && "123" == password) {
+            loginActivity.loginResult(true, "user:$username,pass:$password")
+        } else {
+            loginActivity.loginResult(false, "user:$username,pass:$password")
+        }
     }
 }
 
-
-//class TestMvpPresenter(private val testMvpActivity: TestMvpActivity) : TestMvpContract.Presenter {
-//
-//    override fun clean() {
-//        testMvpActivity.doClean()
-//    }
-//
-//    override fun doLogin(username: String, password: String) {
-//        if ("wangjitao" == username && "123" == password) {
-//            testMvpActivity.loginResult(true, "user:$username,pass:$password")
-//        } else {
-//            testMvpActivity.loginResult(false, "user:$username,pass:$password")
-//        }
-//    }
-//}

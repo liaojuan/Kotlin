@@ -66,7 +66,8 @@ class SplashActivity2 : BaseActivity() {
                         else{
 //                            val intent = Intent(activity, MainActivity::class.java)
 //                            val intent = Intent(activity, MainActivity2::class.java)
-                            val intent = Intent(activity, TestMvpActivity::class.java)
+//                            val intent = Intent(activity, TestMvpActivity::class.java)
+                            val intent = Intent(activity, LoginActivity::class.java)
                             activity!!.startActivity(intent)
                             activity.finish()
                         }
