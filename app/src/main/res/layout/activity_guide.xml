@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/guide_vp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <LinearLayout
+        android:id="@+id/guide_ll_point"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="150dp"
+        android:gravity="center_horizontal"
+        ></LinearLayout>
+
+    <Button
+        android:id="@+id/guide_ib_start"
+        android:layout_width="500pt"
+        android:layout_height="55pt"
+        android:text="进入大学瞄"
+        android:textSize="30pt"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/guide_ll_point"
+        android:visibility="gone"
+        />
+
+</RelativeLayout>
