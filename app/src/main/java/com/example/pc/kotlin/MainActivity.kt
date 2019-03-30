@@ -17,6 +17,8 @@ class MainActivity : AppCompatActivity() {
     private var threeFragment: ThreeFragment ?= null
 
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
