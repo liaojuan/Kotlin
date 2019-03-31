@@ -4,6 +4,10 @@ import com.example.pc.kotlin.ui.activity.LoginActivity
 import com.example.pc.kotlin.ui.contract.LoginContract
 
 class LoginPresenter(private val loginActivity: LoginActivity) : LoginContract.Presenter {
+    override fun intentsUtils() {//针对跳转
+        loginActivity.intentsUtils()
+    }
+
     override fun clean() {
         loginActivity.doClean()
     }

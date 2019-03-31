@@ -1,5 +1,6 @@
 package com.example.pc.kotlin.ui.activity
 
+import android.content.Intent
 import android.util.Log
 import android.view.View
 import android.widget.Toast
@@ -10,6 +11,9 @@ import com.example.pc.kotlin.ui.presenter.LoginPresenter
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity: BaseActivity() ,LoginContract.View, View.OnClickListener{
+    override fun intentsUtils() {
+        startActivity(Intent(this, ListViewActivity::class.java))
+    }
 
     private var loginPresenter: LoginPresenter ?= null
 
@@ -22,6 +26,8 @@ class LoginActivity: BaseActivity() ,LoginContract.View, View.OnClickListener{
                 loginPresenter!!.doLogin(editText_user!!.text.toString(), editText_pass!!.text.toString())
                 Toast.makeText(this, "登陆成功：$editText_user", Toast.LENGTH_SHORT).show()
             }
+            R.id.button_list_view ->
+                loginPresenter!!.intentsUtils()
         }
     }
 
@@ -32,10 +38,10 @@ class LoginActivity: BaseActivity() ,LoginContract.View, View.OnClickListener{
 
     override fun loginResult(isSuccess: Boolean, messing: String) {
         if (isSuccess) {
-        Toast.makeText(this, "登陆成功：$messing", Toast.LENGTH_SHORT).show()
-    } else {
-        Toast.makeText(this, "登陆失败", Toast.LENGTH_SHORT).show()
-    }
+            Toast.makeText(this, "登陆成功：$messing", Toast.LENGTH_SHORT).show()
+        } else {
+            Toast.makeText(this, "登陆失败", Toast.LENGTH_SHORT).show()
+        }
     }
 
     override fun getLayoutID(): Int {
@@ -50,6 +56,7 @@ class LoginActivity: BaseActivity() ,LoginContract.View, View.OnClickListener{
         loginPresenter = LoginPresenter(this)
         button_login.setOnClickListener(this)
         button_clean.setOnClickListener(this)
+        button_list_view.setOnClickListener(this)
     }
 
     override fun initData() {

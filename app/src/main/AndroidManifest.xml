@@ -41,6 +41,10 @@
         <activity
             android:name=".ui.activity.TestMvpActivity"
             android:screenOrientation="portrait" />
+        <!-- 测试java-mvp -->
+        <activity
+            android:name=".ui.activity.ListViewActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>
